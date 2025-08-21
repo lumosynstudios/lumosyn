@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pkill:*)",
+      "Bash(npx:*)",
+      "Bash(npm install:*)",
+      "Bash(claude config list)",
+      "Bash(claude config get mcp.servers)",
+      "Bash(node:*)",
+      "Bash(npm:*)",
+      "Bash(timeout 10 npx @magicuidesign/mcp@latest --help)"
+    ],
+    "deny": [],
+    "ask": [],
+    "additionalDirectories": [
+      "/home/khovi/.config"
+    ]
+  }
+}

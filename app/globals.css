@@ -41,6 +41,13 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  
+  /* Lumosyn Brand Colors */
+  --color-brand-blue: #3B82F6;
+  --color-brand-blue-light: #60A5FA;
+  --color-brand-purple: #7C3AED;
+  --color-brand-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --color-brand-gradient-dark: linear-gradient(135deg, #7c3aed 0%, #2563eb 100%);
 }
 
 :root {
@@ -117,6 +124,59 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-brand-blue to-brand-purple bg-clip-text text-transparent;
+  }
+  
+  .bg-gradient-brand {
+    background: var(--color-brand-gradient);
+  }
+  
+  .dark .bg-gradient-brand {
+    background: var(--color-brand-gradient-dark);
+  }
+  
+  .glass-effect {
+    @apply backdrop-blur-md bg-white/10 dark:bg-black/10 border border-white/20 dark:border-white/10;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes glow {
+    from { box-shadow: 0 0 20px -10px var(--color-brand-blue); }
+    to { box-shadow: 0 0 20px -5px var(--color-brand-blue), 0 0 30px -10px var(--color-brand-purple); }
+  }
+  
+  @keyframes shimmer-slide {
+    to {
+      transform: translate(calc(100cqw - 100%), 0);
+    }
+  }
+  
+  @keyframes spin-around {
+    to {
+      transform: rotate(1turn);
+    }
   }
 }
