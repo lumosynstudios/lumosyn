@@ -16,7 +16,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Lumosyn Studios - Premier Web Development & AI Solutions in the Philippines",
+  icons: {
+    icon: [
+      {
+        url: '/favicon-light.svg',
+        type: 'image/svg+xml',
+        media: '(prefers-color-scheme: light)'
+      },
+      {
+        url: '/favicon-dark.svg',
+        type: 'image/svg+xml',
+        media: '(prefers-color-scheme: dark)'
+      },
+    ]
+  },
+  title: "Lumosyn Studios",
   description: "Leading tech startup in the Philippines offering modern web development, mobile apps, AI automation, UI/UX design, and chatbot/LLM integrations. Serving Manila, Cebu, Davao and all of PH.",
   keywords: "web development Philippines, AI automation Manila, UI/UX design Cebu, chatbots Philippines, LLM integration, tech startup PH, React development Philippines, Next.js developers Manila, mobile app development Philippines",
   authors: [{ name: "Lumosyn Studios Philippines" }],
@@ -27,7 +41,7 @@ export const metadata: Metadata = {
     canonical: "https://lumosyn.ph",
   },
   openGraph: {
-    title: "Lumosyn Studios - Premier Web Development & AI Solutions in the Philippines",
+    title: "Lumosyn Studios",
     description: "Transform your business with our modern web development and AI automation services. Based in the Philippines, serving clients worldwide.",
     url: "https://lumosyn.ph",
     siteName: "Lumosyn Studios",
@@ -44,7 +58,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lumosyn Studios - Premier Web Development & AI Solutions in the Philippines",
+    title: "Lumosyn Studios",
     description: "Transform your business with our modern web development and AI automation services.",
     images: ["/og-image.jpg"],
   },
