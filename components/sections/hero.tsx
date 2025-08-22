@@ -1,14 +1,13 @@
 "use client"
 
 import * as React from "react"
-import { motion } from "framer-motion"
+import { motion, type Variants } from "framer-motion"
 import { ChevronDown, Play, ArrowRight } from "lucide-react"
 import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
-import { Globe } from "@/components/magicui/globe"
 
-const fadeInUp = {
+const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
@@ -17,7 +16,7 @@ const fadeInUp = {
   }
 }
 
-const staggerContainer = {
+const staggerContainer: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -33,7 +32,7 @@ export function Hero() {
     <section id="home" className="relative min-h-screen flex items-center justify-center">
       {/* Subtle background grid */}
       <div className="absolute inset-0 bg-grid-pattern opacity-[0.02] dark:opacity-[0.05]" />
-      
+
       {/* Modern gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-transparent via-background/50 to-transparent" />
 
@@ -60,9 +59,9 @@ export function Hero() {
                 Built for Tomorrow
               </span>
             </h1>
-            
+
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              We craft high-performance web applications, AI automations, and digital experiences 
+              We craft high-performance web applications, AI automations, and digital experiences
               that drive business growth. Based in the Philippines, serving clients worldwide.
             </p>
           </motion.div>
@@ -75,7 +74,7 @@ export function Hero() {
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
-            
+
             <Button size="lg" variant="outline" className="group" asChild>
               <Link href="#portfolio">
                 <Play className="mr-2 h-4 w-4" />

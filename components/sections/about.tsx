@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { motion, Variants } from "framer-motion"
+import { motion, type Variants } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import { Users, Target, Lightbulb, Award } from "lucide-react"
 

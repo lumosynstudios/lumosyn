@@ -1,14 +1,14 @@
 "use client"
 
 import * as React from "react"
-import { motion } from "framer-motion"
+import { motion, type Variants } from "framer-motion"
 import { useInView } from "react-intersection-observer"
-import { 
-  Globe, 
-  Smartphone, 
-  Bot, 
-  Palette, 
-  MessageSquare, 
+import {
+  Globe,
+  Smartphone,
+  Bot,
+  Palette,
+  MessageSquare,
   Zap,
   ArrowRight,
   CheckCircle
@@ -62,7 +62,7 @@ const services = [
   }
 ]
 
-const fadeInUp = {
+const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
@@ -71,7 +71,7 @@ const fadeInUp = {
   }
 }
 
-const staggerContainer = {
+const staggerContainer: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -104,16 +104,16 @@ export function Services() {
               <span className="text-sm font-medium">Our Services</span>
             </div>
           </motion.div>
-          
+
           <motion.h2 variants={fadeInUp} className="text-4xl sm:text-5xl font-bold mb-6">
             <span className="block">Comprehensive Digital</span>
             <span className="block text-gradient bg-gradient-to-r from-brand-blue to-brand-purple bg-clip-text text-transparent">
               Solutions & Services
             </span>
           </motion.h2>
-          
+
           <motion.p variants={fadeInUp} className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            From web development to AI automation, we deliver end-to-end solutions 
+            From web development to AI automation, we deliver end-to-end solutions
             that drive measurable business results.
           </motion.p>
         </motion.div>
@@ -135,7 +135,7 @@ export function Services() {
                       {service.metrics}
                     </div>
                   </div>
-                  
+
                   {/* Content */}
                   <div className="space-y-4">
                     <div>
@@ -146,7 +146,7 @@ export function Services() {
                         {service.description}
                       </p>
                     </div>
-                    
+
                     {/* Features */}
                     <div className="space-y-2">
                       {service.features.map((feature) => (
@@ -156,10 +156,10 @@ export function Services() {
                         </div>
                       ))}
                     </div>
-                    
+
                     {/* CTA */}
-                    <Button 
-                      variant="ghost" 
+                    <Button
+                      variant="ghost"
                       size="sm"
                       className="w-full justify-start text-xs h-8 group-hover:bg-brand-blue/10 group-hover:text-brand-blue transition-all duration-300"
                     >

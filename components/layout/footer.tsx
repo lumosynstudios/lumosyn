@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { motion } from "framer-motion"
+import { motion, type Variants } from "framer-motion"
 import { Mail, MapPin, Phone, ExternalLink, ArrowRight } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -37,7 +37,7 @@ const socialLinks = [
   { name: "GitHub", href: "https://github.com/lumosynstudios", icon: "github" }
 ]
 
-const fadeInUp = {
+const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
@@ -46,7 +46,7 @@ const fadeInUp = {
   }
 }
 
-const staggerContainer = {
+const staggerContainer: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -63,10 +63,10 @@ export function Footer() {
   const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubscribing(true)
-    
+
     // Simulate newsletter subscription
     await new Promise(resolve => setTimeout(resolve, 1000))
-    
+
     setEmail("")
     setIsSubscribing(false)
     alert("Thank you for subscribing!")
@@ -97,12 +97,12 @@ export function Footer() {
                     </span>
                   </div>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Crafting digital experiences that drive business growth. 
-                    Based in the Philippines, serving clients worldwide with 
+                    Crafting digital experiences that drive business growth.
+                    Based in the Philippines, serving clients worldwide with
                     modern web solutions and AI automation.
                   </p>
                 </div>
-                
+
                 <div className="space-y-3">
                   <div className="flex items-center gap-3 text-sm">
                     <MapPin className="h-4 w-4 text-brand-blue flex-shrink-0" />
@@ -187,7 +187,7 @@ export function Footer() {
                     Get the latest insights on web development, AI, and digital innovation.
                   </p>
                 </div>
-                
+
                 <form onSubmit={handleNewsletterSubmit} className="space-y-3">
                   <Input
                     type="email"
@@ -244,7 +244,7 @@ export function Footer() {
             <p className="text-xs text-muted-foreground">
               © {new Date().getFullYear()} Lumosyn Studios. All rights reserved.
             </p>
-            
+
             <div className="flex items-center gap-4 text-xs text-muted-foreground">
               <span>Made with ❤️ in the Philippines</span>
               <div className="flex items-center gap-1">
