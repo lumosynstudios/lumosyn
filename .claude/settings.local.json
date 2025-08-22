@@ -8,7 +8,8 @@
       "Bash(claude config get mcp.servers)",
       "Bash(node:*)",
       "Bash(npm:*)",
-      "Bash(timeout 10 npx @magicuidesign/mcp@latest --help)"
+      "Bash(timeout 10 npx @magicuidesign/mcp@latest --help)",
+      "Bash(rm:*)"
     ],
     "deny": [],
     "ask": [],
