@@ -122,7 +122,7 @@ export function Services() {
           variants={staggerContainer}
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {services.map((service, index) => (
+          {services.map((service) => (
             <motion.div key={service.title} variants={fadeInUp}>
               <Card className="h-full group relative border border-border/50 bg-card/50 backdrop-blur-sm hover:border-brand-blue/50 transition-all duration-300 hover:shadow-lg">
                 <CardContent className="p-6">
