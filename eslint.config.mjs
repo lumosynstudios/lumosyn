@@ -17,10 +17,7 @@ const eslintConfig = [
       "@typescript-eslint/no-empty-object-type": [
         "error",
         {
-          // allow: interface X extends Y {}
           allowInterfaces: "with-single-extends",
-
-          // keep banning plain `{}` object types
           allowObjectTypes: "never",
         },
       ],
