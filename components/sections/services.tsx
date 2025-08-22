@@ -113,7 +113,7 @@ export function Services() {
           </motion.h2>
 
           <motion.p variants={fadeInUp} className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            From web development to AI automation, we deliver end-to-end solutions
+            From web development to AI-powered automation, we deliver end-to-end solutions
             that drive measurable business results.
           </motion.p>
         </motion.div>
