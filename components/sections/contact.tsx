@@ -85,14 +85,14 @@ export function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
+
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1000))
-    
+
     // Reset form
     setFormData({ name: "", email: "", company: "", message: "" })
     setIsSubmitting(false)
-    
+
     // Show success message (you can implement toast notification here)
     alert("Thank you! We'll get back to you soon.")
   }
@@ -120,16 +120,16 @@ export function Contact() {
               <span className="text-sm font-medium">Get In Touch</span>
             </div>
           </motion.div>
-          
+
           <motion.h2 variants={fadeInUp} className="text-4xl sm:text-5xl font-bold mb-6">
             <span className="block">Ready to Start Your</span>
             <span className="block text-gradient bg-gradient-to-r from-brand-blue to-brand-purple bg-clip-text text-transparent">
               Digital Journey?
             </span>
           </motion.h2>
-          
+
           <motion.p variants={fadeInUp} className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Let's discuss your project and see how we can help bring your vision to life.
+            Let&apos;s discuss your project and see how we can help bring your vision to life.
           </motion.p>
         </motion.div>
 
@@ -167,7 +167,7 @@ export function Contact() {
                         />
                       </div>
                     </div>
-                    
+
                     <div className="space-y-2">
                       <Label htmlFor="company">Company</Label>
                       <Input
@@ -179,7 +179,7 @@ export function Contact() {
                         className="bg-background/50"
                       />
                     </div>
-                    
+
                     <div className="space-y-2">
                       <Label htmlFor="message">Project Details *</Label>
                       <textarea
@@ -194,7 +194,7 @@ export function Contact() {
                       />
                     </div>
                   </div>
-                  
+
                   <Button
                     type="submit"
                     size="lg"
@@ -268,8 +268,8 @@ export function Contact() {
                     </span>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    We respond to all inquiries within 24 hours during business days. 
-                    For urgent matters, we're available for immediate consultation.
+                    We respond to all inquiries within 24 hours during business days.
+                    For urgent matters, we&apos;re available for immediate consultation.
                   </p>
                 </CardContent>
               </Card>
