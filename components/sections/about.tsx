@@ -66,7 +66,7 @@ export function About() {
     <section id="about" className="py-24 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-muted/10 to-transparent" />
-      
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div
           ref={ref}
@@ -84,7 +84,7 @@ export function About() {
               About Lumosyn
             </span>
           </motion.div>
-          
+
           <motion.h2
             variants={fadeInUp}
             className="text-4xl sm:text-5xl font-bold mb-6"
@@ -92,14 +92,14 @@ export function About() {
             Pioneers of Digital Innovation
             <span className="block text-gradient">in the Philippines</span>
           </motion.h2>
-          
+
           <motion.p
             variants={fadeInUp}
             className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed"
           >
-            Founded by two passionate developers in the Philippines, Lumosyn Studios combines 
-            local expertise with global standards to deliver exceptional digital experiences. 
-            We're not just building websites and apps – we're crafting the future of Filipino businesses 
+            Founded by two passionate developers in the Philippines, Lumosyn Studios combines
+            local expertise with global standards to deliver exceptional digital experiences.
+            We&apos;re not just building websites and apps – we&apos;re crafting the future of Filipino businesses
             in the digital landscape.
           </motion.p>
         </motion.div>
@@ -109,7 +109,7 @@ export function About() {
           variants={staggerChildren}
           className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-20"
         >
-          {stats.map((stat, index) => (
+          {stats.map((stat) => (
             <motion.div
               key={stat.label}
               variants={fadeInUp}
@@ -141,9 +141,9 @@ export function About() {
                   <div className="inline-flex p-4 rounded-full bg-gradient-brand/10 mb-6">
                     <value.icon className="h-8 w-8 text-brand-blue" />
                   </div>
-                  
+
                   <h3 className="text-xl font-semibold mb-4">{value.title}</h3>
-                  
+
                   <p className="text-muted-foreground leading-relaxed">
                     {value.description}
                   </p>
@@ -166,18 +166,18 @@ export function About() {
               </div>
               <h4 className="text-xl font-semibold">Co-Founder 1</h4>
               <p className="text-muted-foreground">
-                Passionate about creating innovative web solutions and AI automation 
+                Passionate about creating innovative web solutions and AI automation
                 that transform how businesses operate in the digital age.
               </p>
             </div>
-            
+
             <div className="space-y-4">
               <div className="w-32 h-32 mx-auto rounded-full bg-gradient-brand/20 flex items-center justify-center mb-6">
                 <Users className="h-16 w-16 text-brand-blue" />
               </div>
               <h4 className="text-xl font-semibold">Co-Founder 2</h4>
               <p className="text-muted-foreground">
-                Expert in UI/UX design and mobile development, dedicated to creating 
+                Expert in UI/UX design and mobile development, dedicated to creating
                 beautiful, user-friendly experiences that drive results.
               </p>
             </div>

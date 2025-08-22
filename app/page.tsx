@@ -110,6 +110,7 @@ export default function Home() {
 
       {/* Preload critical resources */}
       <Script
+        id="font-preloader"
         strategy="beforeInteractive"
         dangerouslySetInnerHTML={{
           __html: `
