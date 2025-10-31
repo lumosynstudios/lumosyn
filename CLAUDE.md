@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**Lumosyn Studios** is a modern Next.js 15 website for a Philippines-based tech startup offering web development, AI automation, UI/UX design, and chatbot services. The site emphasizes modern design with Gen-Z appeal, performance optimization, and a distinctive floating navbar.
+**Lumosyn AI** is a cutting-edge tech startup website built with Next.js 15, showcasing our web development, AI automation, UI/UX design, and chatbot services. The site features a professional, minimalistic, premium design with Gen-Z appeal and full dark/light mode support.
 
 ## Development Commands
 
@@ -47,6 +47,15 @@ npm run lint
 - `next-themes` - Dark/light mode switching
 - `react-intersection-observer` - Scroll-based animations
 
+### Theme System
+
+- **Custom Theme Context** at `context/theme-context.tsx`
+- Replaces next-themes with custom implementation
+- Includes `useTheme()` hook for theme management
+- Includes `useThemeLogo()` hook for automatic logo switching
+- Supports dark, light, and system themes
+- localStorage persistence with 'lumosyn-theme' key
+
 ## Project Structure
 
 ```
@@ -57,18 +66,20 @@ app/
 ├── robots.ts          # SEO robots configuration
 └── sitemap.ts         # SEO sitemap generation
 
+context/
+└── theme-context.tsx   # Custom theme context with logo switching
+
 components/
 ├── layout/
-│   ├── navbar.tsx     # Dual-state floating navbar (key component)
-│   └── footer.tsx     # Site footer with newsletter
+│   ├── navbar.tsx      # Pill-shaped navbar with logo, BorderBeam, transparent design
+│   └── footer.tsx      # Site footer
 ├── sections/
-│   ├── hero.tsx       # Hero with animated 3D globe
-│   ├── about.tsx      # Founder profiles section
-│   ├── services.tsx   # Interactive service cards
-│   └── contact.tsx    # Contact form with animations
-├── ui/                # ShadcnUI components with custom variants
-├── providers/         # Theme provider wrapper
-└── magicui/          # Custom Magic UI components (globe)
+│   ├── hero.tsx        # Particles, AnimatedGradientText, NumberTicker, ShimmerButton
+│   ├── about.tsx       # TextAnimate, NumberTicker, Ripple, MagicCard
+│   ├── services.tsx    # MagicCard with spotlight, BorderBeam on hover
+│   └── contact.tsx     # MagicCard, ShimmerButton, Confetti, glassmorphism form
+├── ui/                 # ShadcnUI + MagicUI components
+└── providers/          # (Deprecated - use context/theme-context.tsx instead)
 ```
 
 ## Design System
@@ -83,24 +94,55 @@ components/
 
 ### Key Design Patterns
 
-- **Glass morphism**: `backdrop-blur-2xl bg-background/70`
+- **Glass morphism**: `bg-white/70 dark:bg-black/40 backdrop-blur-xl`
 - **Gradient text**: `bg-gradient-to-r from-brand-blue to-brand-purple bg-clip-text text-transparent`
+- **Pill-shaped navbar**: Transparent with BorderBeam, theme-aware logo switching
 - **Floating elements**: Used extensively in navbar and cards
 - **Tab-style aesthetics**: Consistent rounded corners and hover states
+
+## MagicUI Components Integration
+
+### Installed Components
+
+- **BorderBeam**: Animated border effect (navbar, cards)
+- **Particles**: Background particle animation (hero)
+- **ShimmerButton**: Premium shimmer effect button (hero, contact)
+- **AnimatedGradientText**: Gradient text animation (hero)
+- **NumberTicker**: Animated number counter (hero, about)
+- **MagicCard**: Spotlight card effect (services, about, contact)
+- **TextAnimate**: Text reveal animations (about)
+- **Ripple**: Background ripple effect (about)
+- **Confetti**: Success celebration animation (contact)
+
+### Usage Patterns
+
+```typescript
+// MagicCard with hover effect
+<MagicCard
+  gradientSize={200}
+  gradientFrom="#3B82F6"
+  gradientTo="#7C3AED"
+/>
+
+// ShimmerButton with brand gradient
+<ShimmerButton
+  shimmerColor="#3B82F6"
+  background="linear-gradient(to right, #3B82F6, #7C3AED)"
+/>
+```
 
 ## Critical Components
 
 ### Navbar (`components/layout/navbar.tsx`)
 
-**Most complex component** - implements dual-state floating behavior:
+Premium pill-shaped navbar with:
 
-- **Regular state**: Full-width navbar with backdrop blur
-- **Floating state**: Compact pill that appears when scrolled >100px
-- **Key features**:
-  - Scroll detection with `useScroll` and `useMotionValueEvent`
-  - `AnimatePresence` for smooth state transitions
-  - All navigation items remain visible (no hamburger menu on desktop)
-  - Mobile-responsive with separate mobile menu
+- Transparent/translucent design with backdrop blur
+- Lumosyn logo with automatic theme switching
+- BorderBeam animated border effect
+- Smooth scroll detection and animations
+- Mobile-responsive with glassmorphism menu
+- All navigation items visible on desktop
 
 ### Animation Patterns
 
@@ -148,6 +190,12 @@ The floating navbar requires scrolling to test properly. Key behaviors:
 2. All nav items remain visible on desktop
 3. Mobile menu adapts to floating state position
 4. Smooth transitions between states
+
+### Theme Context
+
+- Use `useTheme()` from `@/context/theme-context` instead of next-themes
+- Use `useThemeLogo()` for automatic logo switching
+- Theme stored in localStorage as 'lumosyn-theme'
 
 ### Brand Consistency
 

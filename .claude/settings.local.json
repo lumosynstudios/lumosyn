@@ -9,12 +9,31 @@
       "Bash(node:*)",
       "Bash(npm:*)",
       "Bash(timeout 10 npx @magicuidesign/mcp@latest --help)",
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "mcp__magicui__getUIComponents",
+      "mcp__magicui__getTextAnimations",
+      "mcp__magicui__getSpecialEffects",
+      "mcp__magicui__getButtons",
+      "mcp__magicui__getBackgrounds",
+      "Bash(timeout 15 npm run dev)",
+      "mcp__puppeteer__puppeteer_navigate",
+      "mcp__puppeteer__puppeteer_screenshot",
+      "Bash(lsof:*)",
+      "Bash(xargs -r kill -9)",
+      "Read(//home/joshfermano/Pictures/Screenshots/**)"
     ],
     "deny": [],
     "ask": [],
     "additionalDirectories": [
       "/home/khovi/.config"
     ]
-  }
+  },
+  "enabledMcpjsonServers": [
+    "shadcn",
+    "magicui",
+    "filesystem",
+    "github",
+    "memory",
+    "sequential-thinking"
+  ]
 }
